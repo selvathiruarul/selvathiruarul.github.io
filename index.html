@@ -111,6 +111,53 @@
       section > .container > * {
         animation: fadeInUp 0.8s ease-out;
       }
+
+      /* Particle canvas background */
+      #particles-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .masthead {
+        position: relative;
+      }
+
+      .intro-body {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Stats Section Styling */
+      .stat-box {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .stat-box:hover {
+        background: rgba(255,255,255,0.08);
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(66, 220, 163, 0.2);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #42DCA3;
+        margin: 10px 0;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #fff;
+        opacity: 0.8;
+        margin: 0;
+      }
     </style>
 
   </head>
@@ -149,6 +196,7 @@
 
     <!-- Intro Header -->
     <header class="masthead">
+      <canvas id="particles-canvas"></canvas>
       <div class="intro-body">
         <div class="container">
           <div class="row">
@@ -198,6 +246,91 @@
           </div>
         </div>
       </div>
+      <a href="#stats" class="btn btn-circle js-scroll-trigger">
+        <i class="fa fa-angle-double-down animated"></i>
+      </a>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="download-section content-section text-center" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="mb-5">Impact by Numbers</h2>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-calendar fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="10">0</h3>
+                  <p class="stat-label">Years Experience</p>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-dollar fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="150" data-prefix="$" data-suffix="K">$0K</h3>
+                  <p class="stat-label">Monthly Revenue Generated</p>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-line-chart fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="25" data-prefix="$" data-suffix="K">$0K</h3>
+                  <p class="stat-label">Annual Cost Savings</p>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-certificate fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="2">0</h3>
+                  <p class="stat-label">AWS Certifications</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row mt-4">
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-code fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="7" data-suffix="+">0+</h3>
+                  <p class="stat-label">Programming Languages</p>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-cloud fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="10" data-suffix="+">0+</h3>
+                  <p class="stat-label">AWS Services Mastered</p>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-rocket fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="0">0</h3>
+                  <p class="stat-label">Downtime Deployments</p>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-box p-4">
+                  <i class="fa fa-building fa-3x mb-3" style="color: #42DCA3;"></i>
+                  <h3 class="stat-number" data-count="3">0</h3>
+                  <p class="stat-label">Companies</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="#experience" class="btn btn-circle js-scroll-trigger">
         <i class="fa fa-angle-double-down animated"></i>
       </a>
@@ -211,37 +344,37 @@
           <div class="col-lg-10 mx-auto">
 
             <!-- Clear Link Technologies -->
-            <div class="experience-item mb-5 text-left" style="border-left: 3px solid #42DCA3; padding-left: 30px;">
+            <div class="experience-item mb-5 text-left" style="border-left: 3px solid #42DCA3; padding: 30px; background: rgba(0, 0, 0, 0.5); border-radius: 10px;">
               <h3 style="color: #42DCA3;">Clear Link Technologies, LLC</h3>
-              <h5>Data Engineering Manager / Senior Data Engineer</h5>
-              <p class="text-muted"><i class="fa fa-calendar"></i> March 2018 – Present | USA</p>
-              <ul class="text-left" style="line-height: 1.8;">
-                <li><strong>SaaS Product Architect/Lead:</strong> Architected and led the full-stack development (Gin Golang, Vue.js/React) of the company's first SaaS data product, generating a sustained <strong>$150K in monthly profit</strong> across multiple partner sites.</li>
-                <li><strong>Technical Leadership:</strong> Coordinated architecture and provided technical solutions across multiple engineering teams, acting as a technical liaison to define organizational direction and remove critical roadblocks.</li>
-                <li><strong>Standardization & Governance:</strong> Drove organization-wide standards by setting formal cloud standards and standardizing the core ETL process (Airflow/Docker).</li>
-                <li><strong>Cost Optimization:</strong> Led a major Graph DB migration (Neo4j to AWS Neptune) resulting in <strong>$25K in annual cost savings</strong>.</li>
-                <li><strong>CI/CD & DevOps:</strong> Engineered a continuous integration and delivery (CI/CD) process using Bitbucket and AWS tools (S3, ECS, CodePipeline, CodeBuild/Deploy) to enable zero-downtime deployment.</li>
+              <h5 style="color: #fff; font-weight: 600;">Data Engineering Manager / Senior Data Engineer</h5>
+              <p style="color: #ccc;"><i class="fa fa-calendar"></i> March 2018 – Present | USA</p>
+              <ul class="text-left" style="line-height: 1.8; color: #e0e0e0;">
+                <li><strong style="color: #fff;">SaaS Product Architect/Lead:</strong> Architected and led the full-stack development (Gin Golang, Vue.js/React) of the company's first SaaS data product, generating a sustained <strong style="color: #42DCA3;">$150K in monthly profit</strong> across multiple partner sites.</li>
+                <li><strong style="color: #fff;">Technical Leadership:</strong> Coordinated architecture and provided technical solutions across multiple engineering teams, acting as a technical liaison to define organizational direction and remove critical roadblocks.</li>
+                <li><strong style="color: #fff;">Standardization & Governance:</strong> Drove organization-wide standards by setting formal cloud standards and standardizing the core ETL process (Airflow/Docker).</li>
+                <li><strong style="color: #fff;">Cost Optimization:</strong> Led a major Graph DB migration (Neo4j to AWS Neptune) resulting in <strong style="color: #42DCA3;">$25K in annual cost savings</strong>.</li>
+                <li><strong style="color: #fff;">CI/CD & DevOps:</strong> Engineered a continuous integration and delivery (CI/CD) process using Bitbucket and AWS tools (S3, ECS, CodePipeline, CodeBuild/Deploy) to enable zero-downtime deployment.</li>
               </ul>
             </div>
 
             <!-- Sykes Enterprises -->
-            <div class="experience-item mb-5 text-left" style="border-left: 3px solid #42DCA3; padding-left: 30px;">
+            <div class="experience-item mb-5 text-left" style="border-left: 3px solid #42DCA3; padding: 30px; background: rgba(0, 0, 0, 0.5); border-radius: 10px;">
               <h3 style="color: #42DCA3;">Sykes Enterprises (India) Limited</h3>
-              <h5>Senior Software Engineer</h5>
-              <p class="text-muted"><i class="fa fa-calendar"></i> January 2021 – September 2022 | India</p>
-              <ul class="text-left" style="line-height: 1.8;">
-                <li>Designed and developed a <strong>customer journey platform</strong> to profile customers, effectively reducing queue time before sales and support interaction.</li>
+              <h5 style="color: #fff; font-weight: 600;">Senior Software Engineer</h5>
+              <p style="color: #ccc;"><i class="fa fa-calendar"></i> January 2021 – September 2022 | India</p>
+              <ul class="text-left" style="line-height: 1.8; color: #e0e0e0;">
+                <li>Designed and developed a <strong style="color: #fff;">customer journey platform</strong> to profile customers, effectively reducing queue time before sales and support interaction.</li>
                 <li>Established code quality and development standards for continuous development, integration, and deployment within the team.</li>
               </ul>
             </div>
 
             <!-- TCS -->
-            <div class="experience-item mb-5 text-left" style="border-left: 3px solid #42DCA3; padding-left: 30px;">
+            <div class="experience-item mb-5 text-left" style="border-left: 3px solid #42DCA3; padding: 30px; background: rgba(0, 0, 0, 0.5); border-radius: 10px;">
               <h3 style="color: #42DCA3;">Tata Consultancy Services</h3>
-              <h5>Data Management Developer</h5>
-              <p class="text-muted"><i class="fa fa-calendar"></i> October 2012 – December 2015 | India</p>
-              <ul class="text-left" style="line-height: 1.8;">
-                <li>Developed workflows, export, and import jobs with extensive test cases for <strong>IBM MDM platform</strong>, successfully deploying to production with no downtime.</li>
+              <h5 style="color: #fff; font-weight: 600;">Data Management Developer</h5>
+              <p style="color: #ccc;"><i class="fa fa-calendar"></i> October 2012 – December 2015 | India</p>
+              <ul class="text-left" style="line-height: 1.8; color: #e0e0e0;">
+                <li>Developed workflows, export, and import jobs with extensive test cases for <strong style="color: #fff;">IBM MDM platform</strong>, successfully deploying to production with no downtime.</li>
                 <li>Managed data models and upgraded IBM MDM PIM from version 9.0 to 11.0 for Talk Talk-UK.</li>
               </ul>
             </div>
@@ -442,6 +575,164 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+
+    <!-- Particle Network Animation -->
+    <script>
+      (function() {
+        const canvas = document.getElementById('particles-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationId;
+
+        // Set canvas size
+        function resizeCanvas() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+
+        // Particle class
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 1;
+          }
+
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            // Bounce off edges
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+          }
+
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(66, 220, 163, 0.5)';
+            ctx.fill();
+          }
+        }
+
+        // Create particles
+        function initParticles() {
+          particles = [];
+          const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+          for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+          }
+        }
+
+        // Draw connections between nearby particles
+        function drawConnections() {
+          for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+
+              if (distance < 120) {
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(66, 220, 163, ${0.2 * (1 - distance / 120)})`;
+                ctx.lineWidth = 1;
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.stroke();
+              }
+            }
+          }
+        }
+
+        // Animation loop
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+          });
+
+          drawConnections();
+
+          animationId = requestAnimationFrame(animate);
+        }
+
+        // Initialize
+        resizeCanvas();
+        initParticles();
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', function() {
+          resizeCanvas();
+          initParticles();
+        });
+
+        // Pause animation when not visible (performance optimization)
+        document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+            cancelAnimationFrame(animationId);
+          } else {
+            animate();
+          }
+        });
+      })();
+    </script>
+
+    <!-- Animated Counter Script -->
+    <script>
+      (function() {
+        let animated = false;
+
+        function animateCounters() {
+          if (animated) return;
+
+          const counters = document.querySelectorAll('.stat-number');
+
+          counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            const prefix = counter.getAttribute('data-prefix') || '';
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+              current += increment;
+              if (current < target) {
+                counter.textContent = prefix + Math.floor(current) + suffix;
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = prefix + target + suffix;
+              }
+            };
+
+            updateCounter();
+          });
+
+          animated = true;
+        }
+
+        // Trigger animation when stats section comes into view
+        const statsSection = document.querySelector('.stat-box');
+        if (statsSection) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting && !animated) {
+                animateCounters();
+              }
+            });
+          }, { threshold: 0.3 });
+
+          observer.observe(statsSection);
+        }
+      })();
+    </script>
 
   </body>
 
