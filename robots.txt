@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://selva.it.com/sitemap.xml
